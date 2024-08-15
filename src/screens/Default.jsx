@@ -1,7 +1,6 @@
-import Logo from '../components/Logo';
-import Description from '../components/Description';
-import Content from '../components/Content';
-import GitHub from '../components/GitHub';
+import Logo from './_components/Logo';
+import Description from './_components/Description';
+import OpenLink from '../components/OpenLink';
 
 const Default = () => {
     return (
@@ -9,8 +8,8 @@ const Default = () => {
             <header className="App-header">
                 <Logo />
                 <Description />
-                <Content />
-                <GitHub />
+                <OpenLink tittle="Aprende React" url="https://react.dev"/>
+                <OpenLink tittle="Mi Git aquí" url="https://github.com/roymer/mod-frontend-react"/>
             </header>
         </div>
     );
