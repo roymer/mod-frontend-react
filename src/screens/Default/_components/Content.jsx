@@ -1,16 +1,16 @@
-const OpenLink = ({ title, url }) => {
+const Content = () => {
     return (
         <div>
             <a
                 className="App-link"
-                href={url}
+                href="https://reactjs.org"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                {title}
+                Learn React
             </a>
         </div>
     );
 };
 
-export default OpenLink;
+export default Content;
