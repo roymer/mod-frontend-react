@@ -2,7 +2,7 @@
   "name": "mod-frontend-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://roymer.github.io/roymer/mod-frontend-react",
+  "homepage": "https://roymer.github.io/mod-frontend-react",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
