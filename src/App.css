@@ -63,3 +63,56 @@ a {
 a:hover {
   color: #ffcc00;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+form h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+form h5 {
+  text-align: center;
+}
+form div {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding-right: 10px;
+}
+
+form div label {
+  width: 100px;
+  margin-right: 10px;
+  text-align: right;
+}
+
+form div input {
+  flex: 1;
+  min-width: 200px;
+  width: calc(100% - 120px);
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container button {
+  padding: 8px 40px;
+  font-size: 16px;
+  margin-top: 10px;
+}

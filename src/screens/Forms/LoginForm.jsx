@@ -14,7 +14,7 @@ const LoginForm = () => {
     }
 
     return (
-        <div>
+        <div className="container">
             <form onSubmit={handleSubmit}>
                 <h5>username: {form.formData.username}</h5>
                 <h5>email: {form.formData.email}</h5>
@@ -38,7 +38,9 @@ const LoginForm = () => {
                         onChange={handleChange}
                     />
                 </div>
-                <button type="submit">Submit</button>
+                    <div className="button-container">
+                        <button type="submit">Submit</button>
+                    </div>
             </form>
         </div>
     );
