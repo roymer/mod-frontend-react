@@ -13,6 +13,13 @@ const LoginForm = () => {
     const form = useSelector(state => state.form);
     const dispatch = useDispatch();
 
+    ///Ocultar password
+    const [passwordShow, setPasswordShow] = useState(false);
+
+    const showHiddenPassword = () => {
+      setPasswordShow(!passwordShow);
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(values);
@@ -63,12 +70,15 @@ const LoginForm = () => {
                 <div>
                     <label htmlFor="password">Password</label>
                     <input
-                        type="password"
+                        type={passwordShow ? "text" : "password"}
                         id="password"
                         name="password"
                         value={values.password}
                         onChange={handleChange}
                     />
+                    <button onClick={showHiddenPassword}>
+                      {passwordShow ? "Ocultar" : "Mostrar"}
+                    </button>
                 </div>
                 <div className="button-container">
                         <button type="submit">Submit</button>
