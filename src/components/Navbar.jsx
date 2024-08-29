@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ user, email }) => {
     return (
         <nav>
             <ul>
@@ -16,6 +16,10 @@ const Navbar = () => {
                 <li>
                     <Link to="/login">LoginForm</Link>
                 </li>
+                <div className='span-color'>
+                  Bienvenido <span> {user} </span>
+                  <span> {email}</span>
+                </div>
             </ul>
         </nav>
     );

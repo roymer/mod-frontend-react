@@ -1,9 +1,11 @@
 import { SET_FORM_DATA } from './formTypes';
+import { RESET_FORM_DATA } from './formTypes';
 
 const initialState = {
     formData: {
         username: '',
         email: '',
+        password: '',
     },
 };
 
@@ -17,7 +19,9 @@ const formReducer = (state = initialState, action) => {
                     ...action.payload,
                 }
             }
-        }
+        };
+        case RESET_FORM_DATA:
+            return initialState;
         default:
             return state;
     }

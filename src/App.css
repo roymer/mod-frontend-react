@@ -153,3 +153,7 @@ form div input {
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+.span-color {
+  color: #ffffff;
+}
