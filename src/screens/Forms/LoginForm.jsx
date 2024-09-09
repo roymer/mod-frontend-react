@@ -1,7 +1,6 @@
 import useForm from "../../hooks/useForm";
 import { useSelector, useDispatch } from 'react-redux';
 import {saveFormData} from "../../redux/form/formActions";
-import Navbar from '../../components/Navbar';
 
 import { motion } from "framer-motion";
 import ModalInfo from "../../components/ModalInfo";
@@ -9,7 +8,7 @@ import ModalInfoLogOut from "../../components/ModalInfoLogOut";
 import { useState } from "react";
 
 const LoginForm = () => {
-    const [values, handleChange] = useForm({ username: '', email: '', password: ''});
+    const [values, handleChange, resetForm] = useForm({ username: '', email: '', password: ''});
     const [showModalInfo, setShowModalInfo] = useState(false);
     const [showModalInfoLogOut, setModalInfoLogOut] = useState(false);
     
@@ -25,11 +24,13 @@ const LoginForm = () => {
             console.log(values);
           } else {
             console.log('Password incorrecto');
+            setShowModalInfo(true);
           }
     }
 
     ///LogOut
     const handleLogoutData = () => {
+        resetForm();
         dispatch({ type: 'RESET_FORM_DATA' });
         hideModalLogOut();
       };
@@ -38,8 +39,10 @@ const LoginForm = () => {
     const [passwordShow, setPasswordShow] = useState(false);
 
     const showHiddenPassword = () => {
-      setPasswordShow(!passwordShow);
+        let passwordTextStatus = passwordShow ? false : true;
+        setPasswordShow(passwordTextStatus);
     };
+    
 
     ///Modal
     const showModal = () => {
@@ -64,16 +67,14 @@ const LoginForm = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
     >
-            <Navbar user={form.formData.username} email={form.formData.email} />
-
             <div className="container">
-            <ModalInfo visible = {showModalInfo} message="Chau modulo 7" onClose={hideModal}/>          
+            <ModalInfo visible = {showModalInfo} message="Contraseña incorrecta" onClose={hideModal}/>          
             <ModalInfoLogOut visible = {showModalInfoLogOut} message="¿Seguro que desa salir?" onClose={hideModalLogOut} onConfirm={handleLogoutData}/>          
 
             <form onSubmit={handleSubmit}>
                 <h5>username: {form.formData.username}</h5>
-                <h5>email: {form.formData.email}</h5>
-                <h5>password: {form.formData.password}</h5>
+                {/* <h5>email: {form.formData.email}</h5>
+                <h5>password: {form.formData.password}</h5> */}
                 <div>
                     <label htmlFor="username">Username</label>
                     <input
